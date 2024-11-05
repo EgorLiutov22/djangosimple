@@ -22,6 +22,7 @@ from mysite import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index, name="index"),
-    path("today/", views.dayofweek, name="dayofweek")
-
-]
+    path("today/", views.dayofweek, name="dayofweek"),
+    path("today/<path:wrong>", views.dayofweek_, name="dayofweek_"),
+    path("<int:a>/<str:operator>/<int:b>/", views.calc, name="calc")
+    ]
